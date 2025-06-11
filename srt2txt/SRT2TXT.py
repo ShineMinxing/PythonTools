@@ -26,7 +26,7 @@ srt_files = [f for f in os.listdir(raw_folder_path) if f.endswith('.SRT')]
 # 处理每个 SRT 文件
 for srt_filename in srt_files:
     srt_file_path = os.path.join(raw_folder_path, srt_filename)
-    txt_filename = srt_filename.replace('.SRT', '.txt')
+    txt_filename = srt_filename.replace('.SRT', '_xyz.txt')
     txt_file_path = os.path.join(local_folder_path, txt_filename)
 
     # 如果同名的 .txt 文件已存在，跳过该 SRT 文件
@@ -40,7 +40,7 @@ for srt_filename in srt_files:
     # 读取 SRT 文件内容
     with open(srt_file_path, 'r') as file:
         for line in file:
-            if '2025-' in line:  # 检查时间戳行
+            if '2024-' in line or '2025-' in line or '2026-' in line  :  # 检查时间戳行
                 dt = datetime.datetime.strptime(line.strip(), "%Y-%m-%d %H:%M:%S.%f")
                 timestamps.append(dt)
 
