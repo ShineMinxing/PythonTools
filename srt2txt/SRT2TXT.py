@@ -2,23 +2,32 @@ import os
 import datetime
 import math
 
-# 获取当前脚本所在目录
+# 获取当前脚本所在目录的上一级目录
 script_dir = os.path.dirname(os.path.abspath(__file__))
-folder_path = os.path.join(script_dir, 'local_file')
+parent_dir = os.path.dirname(script_dir)
 
-# 如果 local_file 文件夹不存在，退出程序
-if not os.path.exists(folder_path):
-    print(f"目录不存在：{folder_path}")
+# 定义输入和输出文件夹路径
+raw_folder_path = os.path.join(parent_dir, 'raw_file')
+local_folder_path = os.path.join(parent_dir, 'local_file')
+
+# 如果 raw_file 文件夹不存在，退出程序
+if not os.path.exists(raw_folder_path):
+    print(f"原始文件目录不存在：{raw_folder_path}")
     exit()
 
+# 如果 local_file 文件夹不存在，创建它
+if not os.path.exists(local_folder_path):
+    os.makedirs(local_folder_path)
+    print(f"已创建输出目录：{local_folder_path}")
+
 # 获取所有 .SRT 文件列表
-srt_files = [f for f in os.listdir(folder_path) if f.endswith('.SRT')]
+srt_files = [f for f in os.listdir(raw_folder_path) if f.endswith('.SRT')]
 
 # 处理每个 SRT 文件
 for srt_filename in srt_files:
-    srt_file_path = os.path.join(folder_path, srt_filename)
+    srt_file_path = os.path.join(raw_folder_path, srt_filename)
     txt_filename = srt_filename.replace('.SRT', '.txt')
-    txt_file_path = os.path.join(folder_path, txt_filename)
+    txt_file_path = os.path.join(local_folder_path, txt_filename)
 
     # 如果同名的 .txt 文件已存在，跳过该 SRT 文件
     if os.path.exists(txt_file_path):
