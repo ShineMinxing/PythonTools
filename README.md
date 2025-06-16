@@ -49,3 +49,8 @@
      [ShineMinxing/PythonNeuralNetwork](https://github.com/ShineMinxing/PythonNeuralNetwork.git)
 
 ---
+
+## 视频介绍
+[![srt2txt txt2train使用方法](https://i0.hdslb.com/bfs/archive/650062a4aeb28cb7bfdd15e658de1523f537efb7.jpg)](https://www.bilibili.com/video/BV1ytMizEEdG)
+
+---
