@@ -97,8 +97,8 @@ def process_file(input_path, config):
             outfile.write(" ".join([f"{x:.6f}" for x in azimuth_segment + elevation_segment]) + "\n")
 
     # 生成 _py_output.txt 文件（没有噪声的第 A+B 个 azimuth 和 elevation）
-    azimuth_output = azimuth_data[A + B - 1:]
-    elevation_output = elevation_data[A + B - 1:]
+    azimuth_output = azimuth_data[A + B:]
+    elevation_output = elevation_data[A + B:]
     with open(output_output_path, 'w') as outfile:
         for i in range(len(azimuth_output)):
             # 写入没有噪声的输出数据

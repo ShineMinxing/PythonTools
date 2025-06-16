@@ -1,6 +1,6 @@
-overwrite: false  # 如果为 False，跳过已存在文件
+overwrite: true  # 如果为 False，跳过已存在文件
 azimuth_noise_covariance: 1.00  # azimuth 的噪声协方差
 elevation_noise_covariance: 1.00  # elevation 的噪声协方差
-A: 25  # 输入层节点数量
+A: 1  # 输入层节点数量 / 维度
 B: 2   # 预测步数
 compress_data: true  # 是否压缩数据
