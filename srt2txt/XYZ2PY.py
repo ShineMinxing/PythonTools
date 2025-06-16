@@ -3,7 +3,7 @@ import math
 from datetime import datetime
 
 # 预设观察点位置 (观察者坐标)
-OBSERVER_POSITION = (0, 0, -1)  # (X, Y, Z)
+OBSERVER_POSITION = (1, 1, -1)  # (X, Y, Z)
 
 # 全局变量用于跟踪前一个方向角
 previous_azimuth = None
